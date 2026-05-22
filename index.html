@@ -26,7 +26,7 @@
     }
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; }
+    html { scroll-behavior: smooth; scroll-padding-top: 92px; }
     body {
       min-height: 100vh;
       font-family: "Aptos", "Segoe UI", Arial, sans-serif;
@@ -41,7 +41,7 @@
     a { color: inherit; text-decoration: none; }
 
     .progress-bar {
-      position: fixed; top: 0; left: 0; width: 0; height: 3px; z-index: 9999;
+      position: fixed; top: 0; left: 0; width: 0; height: 3px; z-index: 10001;
       background: linear-gradient(90deg, var(--gold), var(--gold-2));
       box-shadow: 0 0 18px rgba(201, 152, 56, .55);
     }
@@ -52,7 +52,7 @@
       z-index: 1000;
       padding: 0 clamp(16px, 4vw, 42px);
       background: rgba(255, 255, 255, .96);
-      border-top: 3px solid var(--gold);
+      border-top: 0;
       box-shadow: 0 14px 44px rgba(7, 22, 38, .10);
       backdrop-filter: blur(18px);
       -webkit-backdrop-filter: blur(18px);
@@ -193,34 +193,34 @@
     .hero-scroll .wheel { width: 38px; height: 58px; border-radius: 999px; border: 1.5px solid rgba(255,255,255,.2); display: grid; place-items: start center; padding-top: 9px; background: rgba(255,255,255,.06); box-shadow: 0 10px 28px rgba(7,22,38,.18); }
     .hero-scroll .wheel span { width: 6px; height: 12px; border-radius: 999px; background: var(--gold-2); animation: scrollCue 1.7s ease-in-out infinite; }
 
-    section { padding: clamp(72px, 8vw, 104px) clamp(18px, 5vw, 56px); position: relative; min-height: 100vh; min-height: 100svh; display: flex; align-items: center; }
+    section { padding: clamp(54px, 5.6vw, 76px) clamp(18px, 5vw, 56px); position: relative; min-height: 100vh; min-height: 100svh; display: flex; align-items: center; scroll-margin-top: 92px; }
     .section-inner { max-width: var(--max); margin: 0 auto; }
     .section-kicker { color: var(--gold); font-size: 13px; font-weight: 950; letter-spacing: .28em; text-transform: uppercase; margin-bottom: 16px; }
-    .section-title { color: var(--navy); font-size: clamp(34px, 4.8vw, 62px); line-height: .98; letter-spacing: -.045em; text-transform: uppercase; max-width: 770px; margin-bottom: 18px; }
-    .section-lead { max-width: 850px; color: #536176; font-size: 18px; line-height: 1.75; text-align: left; }
-    .section-lead p + p { margin-top: 18px; }
-    .divider { width: 86px; height: 3px; margin: 26px 0 34px; background: linear-gradient(90deg, var(--gold), transparent); border-radius: 999px; }
+    .section-title { color: var(--navy); font-size: clamp(32px, 4vw, 54px); line-height: .98; letter-spacing: -.045em; text-transform: uppercase; max-width: 770px; margin-bottom: 16px; }
+    .section-lead { max-width: 900px; color: #536176; font-size: clamp(15px, 1.18vw, 17px); line-height: 1.62; text-align: left; }
+    .section-lead p + p { margin-top: 12px; }
+    .divider { width: 86px; height: 3px; margin: 18px 0 26px; background: linear-gradient(90deg, var(--gold), transparent); border-radius: 999px; }
 
-    .about-grid { display: grid; grid-template-columns: minmax(0, .95fr) minmax(320px, .7fr); gap: clamp(26px, 5vw, 62px); align-items: start; margin-top: 44px; }
-    .feature-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; }
-    .feature-card { background: rgba(255,255,255,.74); border: 1px solid rgba(23, 52, 90, .08); box-shadow: var(--soft-shadow); border-radius: 22px; padding: 24px; transition: transform .28s var(--ease), box-shadow .28s var(--ease), border-color .28s var(--ease); }
+    .about-grid { display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(320px, .78fr); gap: clamp(22px, 3.4vw, 44px); align-items: stretch; margin-top: 30px; }
+    .feature-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; height: 100%; }
+    .feature-card { background: rgba(255,255,255,.82); border: 1px solid rgba(23, 52, 90, .08); box-shadow: var(--soft-shadow); border-radius: 22px; padding: clamp(18px, 1.8vw, 24px); transition: transform .28s var(--ease), box-shadow .28s var(--ease), border-color .28s var(--ease); display: flex; flex-direction: column; justify-content: center; min-height: 158px; }
     .feature-card:hover { transform: translateY(-7px); box-shadow: 0 26px 62px rgba(7,22,38,.13); border-color: rgba(201,152,56,.34); }
-    .mini-icon { width: 13px; height: 13px; margin-bottom: 16px; background: linear-gradient(135deg, var(--gold), #d9c28a); border-radius: 2px; box-shadow: 0 8px 20px rgba(201,152,56,.25); }
+    .mini-icon { width: 13px; height: 13px; margin-bottom: 14px; background: linear-gradient(135deg, var(--gold), #d9c28a); border-radius: 2px; box-shadow: 0 8px 20px rgba(201,152,56,.25); }
     .feature-card h3 { color: var(--navy); font-size: 17px; margin-bottom: 9px; }
-    .feature-card p { color: #627188; line-height: 1.55; font-size: 14px; }
+    .feature-card p { color: #627188; line-height: 1.5; font-size: 14px; }
 
-    .promise-panel { position: sticky; top: 120px; border-radius: 32px; padding: 34px; color: var(--white); background: linear-gradient(160deg, rgba(23,52,90,.96), rgba(7,22,38,.98)), radial-gradient(circle at 18% 20%, rgba(201,152,56,.24), transparent 18rem); box-shadow: var(--shadow); overflow: hidden; }
+    .promise-panel { position: relative; top: auto; border-radius: 32px; padding: clamp(26px, 2.6vw, 34px); color: var(--white); background: linear-gradient(160deg, rgba(23,52,90,.96), rgba(7,22,38,.98)), radial-gradient(circle at 18% 20%, rgba(201,152,56,.24), transparent 18rem); box-shadow: var(--shadow); overflow: hidden; height: 100%; display: flex; flex-direction: column; justify-content: center; min-height: 336px; }
     .promise-panel::after { content: ""; position: absolute; width: 250px; height: 250px; right: -100px; bottom: -100px; border-radius: 50%; border: 28px solid rgba(201,152,56,.22); }
-    .promise-panel h3 { font-size: clamp(26px, 3vw, 38px); line-height: 1.05; letter-spacing: -.025em; text-transform: uppercase; margin-bottom: 18px; }
-    .promise-panel p { color: rgba(255,255,255,.74); line-height: 1.75; margin-bottom: 24px; }
+    .promise-panel h3 { font-size: clamp(25px, 2.7vw, 36px); line-height: 1.06; letter-spacing: -.025em; text-transform: uppercase; margin-bottom: 16px; }
+    .promise-panel p { color: rgba(255,255,255,.74); line-height: 1.62; margin-bottom: 22px; }
     .meta-list { display: grid; gap: 12px; position: relative; z-index: 1; }
-    .meta-item { display: flex; align-items: center; justify-content: space-between; gap: 18px; padding: 15px 0; border-bottom: 1px solid rgba(255,255,255,.11); color: rgba(255,255,255,.88); font-size: 14px; }
+    .meta-item { display: flex; align-items: center; justify-content: space-between; gap: 18px; padding: 13px 0; border-bottom: 1px solid rgba(255,255,255,.11); color: rgba(255,255,255,.88); font-size: 14px; }
     .meta-item strong { color: var(--gold-2); text-transform: uppercase; letter-spacing: .13em; font-size: 11px; }
 
     .services-section { background: linear-gradient(180deg, #f7f9fc 0%, #eef3f8 100%); }
-    .services-top { display: flex; justify-content: space-between; gap: 28px; align-items: end; margin-bottom: 42px; }
+    .services-top { display: flex; justify-content: space-between; gap: 28px; align-items: end; margin-bottom: 30px; }
     .services-top .section-lead { max-width: 460px; font-size: 16px; text-align: left; }
-    .services-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; counter-reset: service; }
+    .services-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; counter-reset: service; }
     .service-card { position: relative; display: grid; grid-template-columns: auto 1fr; gap: 16px; align-items: start; border-radius: 24px; background: rgba(255,255,255,.82); border: 1px solid rgba(23, 52, 90, .08); padding: clamp(18px, 2vw, 24px); overflow: hidden; transition: transform .3s var(--ease), box-shadow .3s var(--ease), border-color .3s var(--ease); }
     .service-card::before { counter-increment: service; content: counter(service, decimal-leading-zero); display: grid; place-items: center; min-width: 46px; height: 46px; border-radius: 15px; color: var(--gold); background: rgba(201,152,56,.10); font-weight: 950; font-size: 13px; letter-spacing: .08em; border: 1px solid rgba(201,152,56,.22); }
     .service-card::after { content: ""; position: absolute; inset: auto 0 0 0; height: 3px; background: linear-gradient(90deg, var(--gold), transparent); transform: scaleX(0); transform-origin: left; transition: transform .32s var(--ease); }
@@ -240,17 +240,31 @@
     .port-tag:hover { transform: translateY(-3px); background: var(--navy); color: var(--white); box-shadow: 0 14px 28px rgba(20,47,85,.16); }
 
     .contact-section { background: linear-gradient(140deg, #07192F, #102A4A 66%, #142F55); color: var(--white); overflow: hidden; }
-    .contact-section::before { content: ""; position: absolute; width: 720px; height: 720px; right: -250px; top: -210px; border-radius: 50%; border: 1px solid rgba(201,152,56,.24); box-shadow: inset 0 0 0 44px rgba(201,152,56,.06); }
+    .contact-section::before { content: ""; position: absolute; width: 720px; height: 720px; right: -250px; top: -210px; border-radius: 50%; border: 1px solid rgba(201,152,56,.22); box-shadow: inset 0 0 0 44px rgba(201,152,56,.05); }
     .contact-section .section-title { color: var(--white); }
-    .contact-section .section-lead { color: rgba(255,255,255,.72); text-align: left; }
-    .contact-grid { position: relative; z-index: 1; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; margin-top: 42px; }
-    .office-card { position: relative; padding: 30px; border-radius: 28px; background: rgba(255,255,255,.075); border: 1px solid rgba(255,255,255,.12); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); overflow: hidden; transition: transform .3s var(--ease), background .3s ease, border-color .3s ease; }
-    .office-card:hover { transform: translateY(-7px); background: rgba(255,255,255,.105); border-color: rgba(201,152,56,.38); }
+    .contact-section .section-lead { color: rgba(255,255,255,.72); text-align: left; max-width: 720px; }
+    .contact-layout { position: relative; z-index: 1; display: grid; grid-template-columns: minmax(0, .95fr) minmax(300px, .55fr); gap: clamp(22px, 4vw, 54px); align-items: stretch; margin-top: 34px; }
+    .office-address-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; }
+    .office-card { position: relative; padding: clamp(24px, 2.5vw, 32px); border-radius: 28px; background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.13); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); overflow: hidden; transition: transform .3s var(--ease), background .3s ease, border-color .3s ease; box-shadow: 0 22px 50px rgba(7,22,38,.16); }
+    .office-card:hover { transform: translateY(-6px); background: rgba(255,255,255,.115); border-color: rgba(201,152,56,.36); }
     .office-card::before { content: ""; position: absolute; left: 30px; top: 0; width: 60px; height: 3px; background: var(--gold); }
-    .office-card h3 { color: var(--gold-2); font-size: 13px; letter-spacing: .22em; text-transform: uppercase; margin-bottom: 22px; }
-    .contact-row { display: grid; grid-template-columns: 28px 1fr; gap: 12px; color: rgba(255,255,255,.82); line-height: 1.55; margin-top: 12px; }
+    .office-card h3 { color: var(--gold-2); font-size: 13px; letter-spacing: .22em; text-transform: uppercase; margin-bottom: 20px; }
+    .contact-row { display: grid; grid-template-columns: 28px 1fr; gap: 12px; color: rgba(255,255,255,.84); line-height: 1.58; margin-top: 12px; }
     .contact-row b { color: var(--white); font-weight: 800; }
     .contact-row .icon { color: var(--gold-2); font-weight: 900; }
+    .contact-widget-stack { display: grid; gap: 16px; align-content: center; }
+    .contact-widget { position: relative; display: flex; align-items: center; justify-content: space-between; gap: 16px; min-height: 92px; padding: 22px 24px; border-radius: 26px; background: rgba(255,255,255,.105); border: 1px solid rgba(255,255,255,.14); box-shadow: 0 22px 50px rgba(7,22,38,.16); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); transition: transform .28s var(--ease), background .28s ease, border-color .28s ease; }
+    .contact-widget:hover, .phone-widget[open] { transform: translateY(-4px); background: rgba(255,255,255,.14); border-color: rgba(201,152,56,.38); }
+    .contact-widget strong { display: block; color: var(--white); font-size: 18px; margin-bottom: 4px; }
+    .contact-widget span, .phone-widget summary span { color: rgba(255,255,255,.72); font-size: 14px; line-height: 1.4; }
+    .widget-icon { width: 48px; height: 48px; display: grid; place-items: center; flex: 0 0 auto; border-radius: 16px; color: #081C34; background: linear-gradient(135deg, var(--gold), var(--gold-2)); font-weight: 950; box-shadow: 0 14px 28px rgba(201,152,56,.24); }
+    .phone-widget { display: block; cursor: pointer; }
+    .phone-widget summary { list-style: none; display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+    .phone-widget summary::-webkit-details-marker { display: none; }
+    .phone-options { display: grid; gap: 10px; padding-top: 18px; margin-top: 18px; border-top: 1px solid rgba(255,255,255,.12); }
+    .phone-options a { display: flex; justify-content: space-between; gap: 14px; padding: 12px 14px; border-radius: 14px; color: var(--white); background: rgba(255,255,255,.075); transition: background .25s ease, transform .25s ease; }
+    .phone-options a:hover { background: rgba(255,255,255,.13); transform: translateX(3px); }
+    .phone-options small { color: var(--gold-2); font-weight: 900; text-transform: uppercase; letter-spacing: .1em; }
 
     .footer { padding: 34px clamp(18px, 5vw, 56px); background: #06121f; color: rgba(255,255,255,.58); }
     .footer-inner { max-width: var(--max); margin: 0 auto; display: flex; justify-content: space-between; align-items: center; gap: 18px; flex-wrap: wrap; font-size: 13px; }
@@ -269,8 +283,8 @@
       .hero-media { inset: 0; width: 100%; background-position: center; }
       .hero-media::before { background: linear-gradient(180deg, rgba(8,28,52,.90) 0%, rgba(11,36,63,.78) 24%, rgba(20,47,85,.60) 42%, rgba(12,33,58,.84) 100%); }
       .hero-content { max-width: 620px; }
-      .about-grid, .coverage-wrap { grid-template-columns: 1fr; }
-      .promise-panel { position: relative; top: auto; }
+      .about-grid, .coverage-wrap, .contact-layout { grid-template-columns: 1fr; }
+      .promise-panel { position: relative; top: auto; min-height: auto; }
       .services-top { align-items: flex-start; flex-direction: column; }
     }
 
@@ -282,7 +296,7 @@
       .hero { padding: 112px 16px 54px; }
       h1 { font-size: clamp(31px, 8.9vw, 48px); line-height: 1.16; max-width: 100%; }
       .hero-copy, .section-lead { text-align: left; }
-      .feature-grid, .services-grid, .contact-grid { grid-template-columns: 1fr; }
+      .feature-grid, .services-grid, .office-address-grid, .contact-layout { grid-template-columns: 1fr; }
       section { padding-left: 16px; padding-right: 16px; min-height: auto; display: block; }
       .hero { min-height: 100vh; min-height: 100svh; display: flex; }
       .coverage-map { min-height: 380px; padding: 12px; }
@@ -376,7 +390,6 @@
       <div class="section-inner">
         <div class="services-top">
           <div><div class="section-kicker reveal">Our Services</div><h2 class="section-title reveal">Complete marine agency support</h2></div>
-          <p class="section-lead reveal">Comprehensive port agency, transit, husbandry, chandling, technical and logistics support for vessel operations across Egypt.</p>
         </div>
         <div class="services-grid">
           <article class="service-card reveal"><div><h3>Suez Canal Transit Services</h3><p>Full transit coordination, permits & documentation.</p></div></article>
@@ -417,19 +430,35 @@
         <div class="section-kicker reveal">Contact</div>
         <h2 class="section-title reveal">Contact EastMed Marine Agency</h2>
         <p class="section-lead reveal">For vessel attendance, transit coordination, crew support, technical services or general enquiries, contact the EastMed team directly.</p>
-        <div class="contact-grid">
-          <article class="office-card reveal">
-            <h3>Main Office</h3>
-            <div class="contact-row"><span class="icon">⌂</span><div><b>Address</b><br>7 Wahdan Street, Unit 518<br>1st Zone, Nasr City<br>Cairo, Egypt</div></div>
-            <div class="contact-row"><span class="icon">✉</span><div><b>Email</b><br><a href="mailto:info@eastmed-marine.com.eg">info@eastmed-marine.com.eg</a></div></div>
-            <div class="contact-row"><span class="icon">✆</span><div><b>Phone</b><br><a href="tel:+201031908088">+20 103 190 8088</a></div></div>
-          </article>
-          <article class="office-card reveal">
-            <h3>Branch Office</h3>
-            <div class="contact-row"><span class="icon">⌂</span><div><b>Address</b><br>24 Ahmed Housny Street<br>1st Zone, Nasr City<br>Cairo, Egypt</div></div>
-            <div class="contact-row"><span class="icon">◌</span><div><b>Website</b><br><a href="https://eastmed-marine.com.eg" target="_blank" rel="noopener">eastmed-marine.com.eg</a></div></div>
-            <div class="contact-row"><span class="icon">✆</span><div><b>Phone</b><br><a href="tel:+201031927835">+20 103 192 7835</a></div></div>
-          </article>
+
+        <div class="contact-layout">
+          <div class="office-address-grid">
+            <article class="office-card reveal">
+              <h3>Main Office</h3>
+              <div class="contact-row"><span class="icon">⌂</span><div><b>Address</b><br>7 Wahdan Street, Unit 518<br>1st Zone, Nasr City<br>Cairo, Egypt</div></div>
+            </article>
+            <article class="office-card reveal">
+              <h3>Branch Office</h3>
+              <div class="contact-row"><span class="icon">⌂</span><div><b>Address</b><br>24 Ahmed Housny Street<br>1st Zone, Nasr City<br>Cairo, Egypt</div></div>
+            </article>
+          </div>
+
+          <div class="contact-widget-stack">
+            <a class="contact-widget reveal" href="mailto:info@eastmed-marine.com.eg" aria-label="Send an email to EastMed Marine Agency">
+              <div><strong>Email Us</strong><span>info@eastmed-marine.com.eg</span></div>
+              <div class="widget-icon">✉</div>
+            </a>
+            <details class="contact-widget phone-widget reveal">
+              <summary>
+                <div><strong>Call Us</strong><span>Click to view phone numbers</span></div>
+                <div class="widget-icon">☎</div>
+              </summary>
+              <div class="phone-options">
+                <a href="tel:+201031908088"><small>Main</small><span>+20 103 190 8088</span></a>
+                <a href="tel:+201031927835"><small>Branch</small><span>+20 103 192 7835</span></a>
+              </div>
+            </details>
+          </div>
         </div>
       </div>
     </section>
