@@ -306,31 +306,29 @@
 
     .contact-section { background: linear-gradient(140deg, #07192F, #102A4A 66%, #142F55); color: var(--white); overflow: hidden; }
     .contact-section::before { content: ""; position: absolute; width: 720px; height: 720px; right: -250px; top: -210px; border-radius: 50%; border: 1px solid rgba(201,152,56,.22); box-shadow: inset 0 0 0 44px rgba(201,152,56,.05); }
+    .contact-section::after { content: ""; position: absolute; left: -180px; bottom: -220px; width: 560px; height: 560px; border-radius: 50%; background: radial-gradient(circle, rgba(201,152,56,.10), transparent 62%); pointer-events: none; }
     .contact-section .section-title { color: var(--white); }
     .contact-section .section-lead { color: rgba(255,255,255,.72); text-align: left; max-width: 720px; }
-    .contact-layout { position: relative; z-index: 1; display: grid; gap: 22px; align-items: start; margin-top: 30px; max-width: 920px; }
-    .office-address-grid { display: grid; gap: 12px; }
-    .office-card { position: relative; min-height: 64px; padding: 16px 20px; border-radius: 999px; background: rgba(255,255,255,.085); border: 1px solid rgba(255,255,255,.13); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); overflow: hidden; transition: transform .3s var(--ease), background .3s ease, border-color .3s ease; box-shadow: 0 18px 42px rgba(7,22,38,.13); display: flex; align-items: center; gap: 14px; }
-    .office-card:hover { transform: translateY(-4px); background: rgba(255,255,255,.12); border-color: rgba(201,152,56,.32); }
+    .contact-layout { position: relative; z-index: 1; display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(300px, .84fr); gap: clamp(30px, 5vw, 72px); align-items: start; margin-top: 42px; }
+    .office-address-grid { display: grid; gap: 0; align-content: start; }
+    .office-card { position: relative; padding: 18px 0 20px; border-radius: 0; background: transparent; border: 0; border-bottom: 1px solid rgba(255,255,255,.14); overflow: visible; transition: border-color .25s ease, transform .25s var(--ease); box-shadow: none; display: grid; grid-template-columns: 150px minmax(0, 1fr); gap: 24px; align-items: start; }
+    .office-card:hover { transform: translateY(-2px); border-color: rgba(201,152,56,.42); }
     .office-card::before { display: none; }
-    .office-card h3 { color: var(--gold-2); font-size: 12px; letter-spacing: .18em; text-transform: uppercase; min-width: 118px; margin: 0; }
-    .office-card .address-line { color: rgba(255,255,255,.86); line-height: 1.45; font-size: 14px; }
-    .office-card .icon { width: 38px; height: 38px; display: grid; place-items: center; flex: 0 0 auto; border-radius: 14px; color: #081C34; background: linear-gradient(135deg, var(--gold), var(--gold-2)); font-weight: 950; box-shadow: 0 12px 24px rgba(201,152,56,.22); }
-    .contact-widget-stack { display: flex; gap: 14px; flex-wrap: wrap; align-items: flex-start; }
-    .contact-widget { position: relative; display: inline-flex; align-items: center; justify-content: flex-start; gap: 14px; width: 76px; min-height: 76px; padding: 14px; border-radius: 24px; background: rgba(255,255,255,.105); border: 1px solid rgba(255,255,255,.14); box-shadow: 0 22px 50px rgba(7,22,38,.16); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); transition: width .36s var(--ease), transform .28s var(--ease), background .28s ease, border-color .28s ease; overflow: hidden; }
-    .contact-widget:hover, .contact-widget:focus-visible, .phone-widget[open] { width: min(360px, 100%); transform: translateY(-4px); background: rgba(255,255,255,.14); border-color: rgba(201,152,56,.38); }
-    .widget-copy { max-width: 0; opacity: 0; overflow: hidden; white-space: nowrap; transition: max-width .34s var(--ease), opacity .22s ease; }
-    .contact-widget:hover .widget-copy, .contact-widget:focus-visible .widget-copy, .phone-widget[open] .widget-copy { max-width: 260px; opacity: 1; }
-    .contact-widget strong { display: block; color: var(--white); font-size: 16px; margin-bottom: 3px; }
-    .contact-widget span, .phone-widget summary span { color: rgba(255,255,255,.72); font-size: 13px; line-height: 1.35; }
-    .widget-icon { width: 48px; height: 48px; display: grid; place-items: center; flex: 0 0 auto; border-radius: 16px; color: #081C34; background: linear-gradient(135deg, var(--gold), var(--gold-2)); font-weight: 950; box-shadow: 0 14px 28px rgba(201,152,56,.24); }
-    .phone-widget { display: inline-block; cursor: pointer; }
-    .phone-widget summary { list-style: none; display: inline-flex; align-items: center; gap: 14px; width: 100%; }
-    .phone-widget summary::-webkit-details-marker { display: none; }
-    .phone-options { display: grid; gap: 10px; padding-top: 14px; margin-top: 14px; border-top: 1px solid rgba(255,255,255,.12); min-width: 292px; }
-    .phone-options a { display: flex; justify-content: space-between; gap: 14px; padding: 12px 14px; border-radius: 14px; color: var(--white); background: rgba(255,255,255,.075); transition: background .25s ease, transform .25s ease; }
-    .phone-options a:hover { background: rgba(255,255,255,.13); transform: translateX(3px); }
-    .phone-options small { color: var(--gold-2); font-weight: 900; text-transform: uppercase; letter-spacing: .1em; }
+    .office-card .icon { display: none; }
+    .office-card h3 { color: var(--gold-2); font-size: 12px; letter-spacing: .18em; text-transform: uppercase; margin: 3px 0 0; line-height: 1.45; }
+    .office-card .address-line { color: rgba(255,255,255,.88); line-height: 1.6; font-size: 15px; }
+    .contact-widget-stack { display: grid; gap: 0; align-content: start; }
+    .contact-action-card { position: relative; display: grid; grid-template-columns: 52px minmax(0, 1fr); gap: 18px; align-items: start; min-height: auto; padding: 18px 0 20px; border-radius: 0; color: var(--white); background: transparent; border: 0; border-bottom: 1px solid rgba(255,255,255,.14); box-shadow: none; transition: transform .25s var(--ease), border-color .25s ease; overflow: visible; }
+    .contact-action-card::after { display: none; }
+    .contact-action-card:hover { transform: translateY(-2px); border-color: rgba(201,152,56,.42); }
+    .contact-action-card .widget-icon { width: 42px; height: 42px; display: grid; place-items: center; border-radius: 12px; color: var(--gold-2); background: rgba(255,255,255,.04); border: 1px solid rgba(255,255,255,.12); font-weight: 950; box-shadow: none; margin-top: 2px; }
+    .contact-action-card .widget-copy { min-width: 0; }
+    .contact-action-card strong { display: block; color: var(--white); font-size: 16px; line-height: 1.3; margin-bottom: 6px; }
+    .contact-action-card span { display: block; color: rgba(255,255,255,.80); font-size: 14px; line-height: 1.55; word-break: break-word; }
+    .phone-list { display: grid; gap: 8px; }
+    .phone-list a { display: inline-flex; width: fit-content; color: rgba(255,255,255,.86); font-size: 14px; line-height: 1.35; transition: color .25s ease, transform .25s ease; }
+    .phone-list a:hover { color: var(--gold-2); transform: translateX(3px); }
+    .phone-list a + a { margin-top: 0; }
 
     .footer { padding: 34px clamp(18px, 5vw, 56px); background: #06121f; color: rgba(255,255,255,.58); }
     .footer-inner { max-width: var(--max); margin: 0 auto; display: flex; justify-content: space-between; align-items: center; gap: 18px; flex-wrap: wrap; font-size: 13px; }
@@ -371,11 +369,12 @@
       .coverage-map-inner, .coverage-map-image { min-height: 380px; }
       .map-hotspot { width: 9px; height: 9px; box-shadow: 0 0 0 4px rgba(224,180,90,.16), 0 0 16px rgba(224,180,90,.42); }
       .map-hotspot span { font-size: 10px; padding: 6px 8px; }
-      .office-card { align-items: flex-start; border-radius: 24px; flex-direction: column; gap: 8px; }
+      .office-card { grid-template-columns: 1fr; gap: 8px; padding: 16px 0 18px; }
       .office-card h3 { min-width: auto; }
-      .contact-widget, .contact-widget:hover, .contact-widget:focus-visible, .phone-widget[open] { width: 100%; }
-      .widget-copy { max-width: 260px; opacity: 1; }
-      .phone-options { min-width: 0; width: 100%; }
+      .contact-layout { gap: 18px; }
+      .contact-widget-stack { gap: 0; }
+      .contact-action-card { grid-template-columns: 44px 1fr; gap: 14px; padding: 16px 0 18px; }
+      .contact-action-card .widget-icon { width: 40px; height: 40px; border-radius: 12px; }
       .footer-inner { align-items: flex-start; flex-direction: column; }
       .hero-kicker { font-size: 11px; letter-spacing: .12em; }
       .hero-scroll { gap: 10px; letter-spacing: .11em; }
@@ -521,32 +520,30 @@
         <div class="contact-layout">
           <div class="office-address-grid">
             <article class="office-card reveal">
-              <span class="icon">⌂</span>
               <h3>Main Office</h3>
               <div class="address-line">7 Wahdan Street, Unit 518, 1st Zone, Nasr City, Cairo, Egypt</div>
             </article>
             <article class="office-card reveal">
-              <span class="icon">⌂</span>
               <h3>Branch Office</h3>
               <div class="address-line">24 Ahmed Housny Street, 1st Zone, Nasr City, Cairo, Egypt</div>
             </article>
           </div>
 
           <div class="contact-widget-stack">
-            <a class="contact-widget reveal" href="mailto:info@eastmed-marine.com.eg" aria-label="Send an email to EastMed Marine Agency">
+            <a class="contact-action-card reveal" href="mailto:info@eastmed-marine.com.eg" aria-label="Send an email to EastMed Marine Agency">
               <div class="widget-icon">✉</div>
-              <div class="widget-copy"><strong>Email</strong><span>info@eastmed-marine.com.eg</span></div>
+              <div class="widget-copy"><strong>Email Us</strong><span>info@eastmed-marine.com.eg</span></div>
             </a>
-            <details class="contact-widget phone-widget reveal">
-              <summary>
-                <div class="widget-icon">☎</div>
-                <div class="widget-copy"><strong>Phone</strong><span>Click to view options</span></div>
-              </summary>
-              <div class="phone-options">
-                <a href="tel:+201031908088"><small>Main</small><span>+20 103 190 8088</span></a>
-                <a href="tel:+201031927835"><small>Branch</small><span>+20 103 192 7835</span></a>
+            <div class="contact-action-card reveal" aria-label="EastMed phone numbers">
+              <div class="widget-icon">☎</div>
+              <div class="widget-copy">
+                <strong>Call Us</strong>
+                <div class="phone-list">
+                  <a href="tel:+201031908088">+20 103 190 8088</a>
+                  <a href="tel:+201031927835">+20 103 192 7835</a>
+                </div>
               </div>
-            </details>
+            </div>
           </div>
         </div>
       </div>
