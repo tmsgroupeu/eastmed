@@ -309,15 +309,15 @@
     .contact-section::after { content: ""; position: absolute; left: -180px; bottom: -220px; width: 560px; height: 560px; border-radius: 50%; background: radial-gradient(circle, rgba(201,152,56,.10), transparent 62%); pointer-events: none; }
     .contact-section .section-title { color: var(--white); }
     .contact-section .section-lead { color: rgba(255,255,255,.72); text-align: left; max-width: 720px; }
-    .contact-layout { position: relative; z-index: 1; display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(300px, .84fr); gap: clamp(30px, 5vw, 72px); align-items: start; margin-top: 42px; }
+    .contact-layout { position: relative; z-index: 1; display: grid; grid-template-columns: 1fr; gap: 0; align-items: start; margin-top: 40px; max-width: 920px; }
     .office-address-grid { display: grid; gap: 0; align-content: start; }
-    .office-card { position: relative; padding: 18px 0 20px; border-radius: 0; background: transparent; border: 0; border-bottom: 1px solid rgba(255,255,255,.14); overflow: visible; transition: border-color .25s ease, transform .25s var(--ease); box-shadow: none; display: grid; grid-template-columns: 150px minmax(0, 1fr); gap: 24px; align-items: start; }
+    .office-card { position: relative; padding: 18px 0 20px; border-radius: 0; background: transparent; border: 0; border-bottom: 1px solid rgba(255,255,255,.14); overflow: visible; transition: border-color .25s ease, transform .25s var(--ease); box-shadow: none; display: grid; grid-template-columns: 155px minmax(0, 1fr); gap: 24px; align-items: start; }
     .office-card:hover { transform: translateY(-2px); border-color: rgba(201,152,56,.42); }
     .office-card::before { display: none; }
     .office-card .icon { display: none; }
     .office-card h3 { color: var(--gold-2); font-size: 12px; letter-spacing: .18em; text-transform: uppercase; margin: 3px 0 0; line-height: 1.45; }
     .office-card .address-line { color: rgba(255,255,255,.88); line-height: 1.6; font-size: 15px; }
-    .contact-widget-stack { display: grid; gap: 0; align-content: start; }
+    .contact-widget-stack { display: grid; gap: 0; align-content: start; margin-top: 4px; }
     .contact-action-card { position: relative; display: grid; grid-template-columns: 52px minmax(0, 1fr); gap: 18px; align-items: start; min-height: auto; padding: 18px 0 20px; border-radius: 0; color: var(--white); background: transparent; border: 0; border-bottom: 1px solid rgba(255,255,255,.14); box-shadow: none; transition: transform .25s var(--ease), border-color .25s ease; overflow: visible; }
     .contact-action-card::after { display: none; }
     .contact-action-card:hover { transform: translateY(-2px); border-color: rgba(201,152,56,.42); }
@@ -331,10 +331,11 @@
     .phone-list a + a { margin-top: 0; }
 
     .footer { padding: 34px clamp(18px, 5vw, 56px); background: #06121f; color: rgba(255,255,255,.58); }
-    .footer-inner { max-width: var(--max); margin: 0 auto; display: flex; justify-content: space-between; align-items: center; gap: 18px; flex-wrap: wrap; font-size: 13px; }
+    .footer-inner { max-width: var(--max); margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr 1fr; align-items: center; gap: 18px; font-size: 13px; }
     .footer img { height: 34px; width: auto; opacity: .95; }
-    .footer-group { line-height: 1.55; }
+    .footer-group { line-height: 1.55; text-align: center; }
     .footer-group span { color: rgba(255,255,255,.46); }
+    .footer-copy { text-align: right; }
 
     .reveal { opacity: 0; transform: translateY(28px); transition: opacity .75s var(--ease), transform .75s var(--ease); }
     .reveal.visible { opacity: 1; transform: translateY(0); }
@@ -371,11 +372,13 @@
       .map-hotspot span { font-size: 10px; padding: 6px 8px; }
       .office-card { grid-template-columns: 1fr; gap: 8px; padding: 16px 0 18px; }
       .office-card h3 { min-width: auto; }
-      .contact-layout { gap: 18px; }
-      .contact-widget-stack { gap: 0; }
+      .contact-layout { gap: 0; margin-top: 28px; }
+      .contact-widget-stack { gap: 0; margin-top: 4px; }
       .contact-action-card { grid-template-columns: 44px 1fr; gap: 14px; padding: 16px 0 18px; }
       .contact-action-card .widget-icon { width: 40px; height: 40px; border-radius: 12px; }
-      .footer-inner { align-items: flex-start; flex-direction: column; }
+      .footer-inner { grid-template-columns: 1fr; text-align: left; align-items: start; }
+      .footer-group { text-align: left; }
+      .footer-copy { text-align: left; }
       .hero-kicker { font-size: 11px; letter-spacing: .12em; }
       .hero-scroll { gap: 10px; letter-spacing: .11em; }
       .hero-scroll .wheel { width: 34px; height: 52px; }
@@ -495,15 +498,16 @@
           <div class="coverage-map-inner">
             <img class="coverage-map-image" src="map.png" alt="Stylized plain coverage map of Egypt and the Suez Canal used for interactive port coverage markers." loading="lazy" decoding="async" />
             <div class="port-hotspots" aria-hidden="true">
-              <button class="map-hotspot" data-port="el-dekheila" style="--x: 41.5%; --y: 18.4%;"><span>El Dekheila</span></button>
-              <button class="map-hotspot" data-port="alexandria" style="--x: 43.5%; --y: 17.6%;"><span>Alexandria</span></button>
-              <button class="map-hotspot" data-port="damietta" style="--x: 54.6%; --y: 15.2%;"><span>Damietta</span></button>
-              <button class="map-hotspot" data-port="port-said" style="--x: 59.3%; --y: 18.5%;"><span>Port Said</span></button>
-              <button class="map-hotspot" data-port="suez-canal" style="--x: 59.9%; --y: 25.4%;"><span>Suez Canal</span></button>
-              <button class="map-hotspot" data-port="suez" style="--x: 61.7%; --y: 30.5%;"><span>Suez</span></button>
-              <button class="map-hotspot" data-port="adabiya" style="--x: 58.8%; --y: 30.8%;"><span>Adabiya</span></button>
-              <button class="map-hotspot" data-port="ain-sokhna" style="--x: 59%; --y: 33.2%;"><span>Ain Sokhna</span></button>
-              <button class="map-hotspot" data-port="safaga" style="--x: 69.8%; --y: 57.4%;"><span>Safaga</span></button>
+              <button class="map-hotspot" data-port="el-dekheila" style="--x: 37.2%; --y: 18.4%;"><span>El Dekheila</span></button>
+              <button class="map-hotspot" data-port="alexandria" style="--x: 39.1%; --y: 18.1%;"><span>Alexandria</span></button>
+              <button class="map-hotspot" data-port="damietta" style="--x: 52.6%; --y: 16.2%;"><span>Damietta</span></button>
+              <button class="map-hotspot" data-port="port-said" style="--x: 57.8%; --y: 20.3%;"><span>Port Said</span></button>
+              <button class="map-hotspot" data-port="suez-canal" style="--x: 58.4%; --y: 28.8%;"><span>Suez Canal</span></button>
+              <button class="map-hotspot" data-port="suez" style="--x: 58.7%; --y: 36.5%;"><span>Suez</span></button>
+              <button class="map-hotspot" data-port="adabiya" style="--x: 59.2%; --y: 40.8%;"><span>Adabiya</span></button>
+              <button class="map-hotspot" data-port="ain-sokhna" style="--x: 60.3%; --y: 46.2%;"><span>Ain Sokhna</span></button>
+              <button class="map-hotspot" data-port="safaga" style="--x: 69.8%; --y: 81.5%;"><span>Safaga</span></button>
+              <button class="map-hotspot" data-port="petroleum" style="--x: 62.6%; --y: 50.4%;"><span>Petroleum Ports &amp; Terminals</span></button>
             </div>
           </div>
         </div>
@@ -553,7 +557,7 @@
     <div class="footer-inner">
       <div><img src="EasMed Logo White Version.png" alt="EastMed Marine Agency white logo" /></div>
       <div class="footer-group">Part of TMS Egypt<br><span>Cyprus · Greece · Egypt</span></div>
-      <div>© <span id="year"></span> EastMed Marine Agency. All rights reserved.</div>
+      <div class="footer-copy">© <span id="year"></span> EastMed Marine Agencies. All rights reserved.</div>
     </div>
   </footer>
 
