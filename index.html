@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="EastMed Marine Agency — specialist port agency and marine support provider operating across all Egyptian ports and the Suez Canal." />
-  <title>EastMed Marine Agency | Your Gateway to Egypt’s Ports and the Suez Canal</title>
+  <meta name="description" content="EastMed Marine Agencies — specialist port agency and marine support provider operating across all Egyptian ports and the Suez Canal." />
+  <title>EastMed Marine Agencies | Your Gateway to Egypt’s Ports and the Suez Canal</title>
   <style>
     @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap");
     :root {
@@ -318,17 +318,17 @@
     .office-card h3 { color: var(--gold-2); font-size: 12px; letter-spacing: .18em; text-transform: uppercase; margin: 3px 0 0; line-height: 1.45; }
     .office-card .address-line { color: rgba(255,255,255,.88); line-height: 1.6; font-size: 15px; }
     .contact-widget-stack { display: grid; gap: 0; align-content: start; margin-top: 4px; }
-    .contact-action-card { position: relative; display: grid; grid-template-columns: 52px minmax(0, 1fr); gap: 18px; align-items: start; min-height: auto; padding: 18px 0 20px; border-radius: 0; color: var(--white); background: transparent; border: 0; border-bottom: 1px solid rgba(255,255,255,.14); box-shadow: none; transition: transform .25s var(--ease), border-color .25s ease; overflow: visible; }
+    .contact-action-card { position: relative; display: grid; grid-template-columns: 155px minmax(0, 1fr); gap: 24px; align-items: start; min-height: auto; padding: 18px 0 20px; border-radius: 0; color: var(--white); background: transparent; border: 0; border-bottom: 1px solid rgba(255,255,255,.14); box-shadow: none; transition: transform .25s var(--ease), border-color .25s ease; overflow: visible; }
     .contact-action-card::after { display: none; }
     .contact-action-card:hover { transform: translateY(-2px); border-color: rgba(201,152,56,.42); }
-    .contact-action-card .widget-icon { width: 42px; height: 42px; display: grid; place-items: center; border-radius: 12px; color: var(--gold-2); background: rgba(255,255,255,.04); border: 1px solid rgba(255,255,255,.12); font-weight: 950; box-shadow: none; margin-top: 2px; }
-    .contact-action-card .widget-copy { min-width: 0; }
-    .contact-action-card strong { display: block; color: var(--white); font-size: 16px; line-height: 1.3; margin-bottom: 6px; }
-    .contact-action-card span { display: block; color: rgba(255,255,255,.80); font-size: 14px; line-height: 1.55; word-break: break-word; }
-    .phone-list { display: grid; gap: 8px; }
-    .phone-list a { display: inline-flex; width: fit-content; color: rgba(255,255,255,.86); font-size: 14px; line-height: 1.35; transition: color .25s ease, transform .25s ease; }
-    .phone-list a:hover { color: var(--gold-2); transform: translateX(3px); }
-    .phone-list a + a { margin-top: 0; }
+    .contact-action-card .widget-icon { display: none; }
+    .contact-action-card .widget-copy { min-width: 0; display: contents; }
+    .contact-action-card strong { display: block; color: var(--gold-2); font-size: 12px; letter-spacing: .18em; text-transform: uppercase; margin: 3px 0 0; line-height: 1.45; }
+    .contact-action-card span { display: block; color: rgba(255,255,255,.88); line-height: 1.6; font-size: 15px; word-break: break-word; }
+    .phone-list { display: flex; flex-wrap: wrap; align-items: center; gap: 0; color: rgba(255,255,255,.88); line-height: 1.6; font-size: 15px; }
+    .phone-list a { display: inline-flex; width: fit-content; color: rgba(255,255,255,.88); font-size: 15px; line-height: 1.6; transition: color .25s ease, transform .25s ease; }
+    .phone-list a:hover { color: var(--gold-2); transform: translateY(-1px); }
+    .phone-separator { display: inline-flex; color: rgba(255,255,255,.46); margin: 0 10px; }
 
     .footer { padding: 34px clamp(18px, 5vw, 56px); background: #06121f; color: rgba(255,255,255,.58); }
     .footer-inner { max-width: var(--max); margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr 1fr; align-items: center; gap: 18px; font-size: 13px; }
@@ -374,8 +374,8 @@
       .office-card h3 { min-width: auto; }
       .contact-layout { gap: 0; margin-top: 28px; }
       .contact-widget-stack { gap: 0; margin-top: 4px; }
-      .contact-action-card { grid-template-columns: 44px 1fr; gap: 14px; padding: 16px 0 18px; }
-      .contact-action-card .widget-icon { width: 40px; height: 40px; border-radius: 12px; }
+      .contact-action-card { grid-template-columns: 1fr; gap: 8px; padding: 16px 0 18px; }
+      .phone-list { gap: 0; }
       .footer-inner { grid-template-columns: 1fr; text-align: left; align-items: start; }
       .footer-group { text-align: left; }
       .footer-copy { text-align: left; }
@@ -401,7 +401,7 @@
 
   <header class="site-header" id="siteHeader">
     <div class="nav-shell">
-      <a class="brand" href="#top" aria-label="EastMed Marine Agency home">
+      <a class="brand" href="#top" aria-label="EastMed Marine Agencies home">
         <img src="EastMed Logo Coloured Version.png" alt="EastMed Marine Agency logo" />
       </a>
       <nav class="nav-links" aria-label="Primary navigation">
@@ -425,7 +425,7 @@
             <span class="line">the <span class="gold-inline">Suez Canal</span></span>
           </h1>
           <p class="hero-copy">Specialist port agency and marine support across all Egyptian ports and one of the world’s most strategically critical waterways.</p>
-          <a class="hero-scroll" href="#about" aria-label="Scroll to learn more about EastMed Marine Agency">
+          <a class="hero-scroll" href="#about" aria-label="Scroll to learn more about EastMed Marine Agencies">
             <span class="wheel"><span></span></span>
             <span>Scroll to explore</span>
           </a>
@@ -439,7 +439,7 @@
         <h2 class="section-title reveal">A maritime partner built for Egypt</h2>
         <div class="divider reveal"></div>
         <div class="section-lead reveal">
-          <p>EastMed Marine Agency is a specialist port agency and marine support provider operating across all Egyptian ports and the Suez Canal, one of the world's most strategically critical waterways.</p>
+          <p>EastMed Marine Agencies is a specialist port agency and marine support provider operating across all Egyptian ports and the Suez Canal, one of the world's most strategically critical waterways.</p>
           <p>We work with ship owners, operators, and fleet managers to coordinate every aspect of a vessel's call from a single point of contact, combining local expertise with the standards and resources of TMS Group.</p>
         </div>
 
@@ -516,7 +516,7 @@
     <section class="contact-section" id="contact">
       <div class="section-inner">
         <div class="section-kicker reveal">Contact</div>
-        <h2 class="section-title reveal">Contact EastMed Marine Agency</h2>
+        <h2 class="section-title reveal">Contact EastMed Marine Agencies</h2>
         <p class="section-lead reveal">For vessel attendance, transit coordination, crew support, technical services or general enquiries, contact the EastMed team directly.</p>
 
         <div class="contact-layout">
@@ -532,17 +532,14 @@
           </div>
 
           <div class="contact-widget-stack">
-            <a class="contact-action-card reveal" href="mailto:info@eastmed-marine.com.eg" aria-label="Send an email to EastMed Marine Agency">
-              <div class="widget-icon">✉</div>
+            <a class="contact-action-card reveal" href="mailto:info@eastmed-marine.com.eg" aria-label="Send an email to EastMed Marine Agencies">
               <div class="widget-copy"><strong>Email Us</strong><span>info@eastmed-marine.com.eg</span></div>
             </a>
             <div class="contact-action-card reveal" aria-label="EastMed phone numbers">
-              <div class="widget-icon">☎</div>
               <div class="widget-copy">
                 <strong>Call Us</strong>
                 <div class="phone-list">
-                  <a href="tel:+201031908088">+20 103 190 8088</a>
-                  <a href="tel:+201031927835">+20 103 192 7835</a>
+                  <a href="tel:+201031908088">+20 103 190 8088</a><span class="phone-separator">/</span><a href="tel:+201031927835">+20 103 192 7835</a>
                 </div>
               </div>
             </div>
